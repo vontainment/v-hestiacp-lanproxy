@@ -1,11 +1,12 @@
 #=======================================================================#
 # Vontainment Web Design, Social Media, Marketing & Tech Consulting     #
-# TPlink  proxy template https://vontainment.com                        #                                   
+# PI-HOLE proxy template https://vontainment.com                        #                                   
 #=======================================================================#
 
 server {
     listen      %ip%:%proxy_ssl_port% ssl http2;
     server_name %domain_idn% %alias_idn%;
+    rewrite ^/$ /admin permanent;
     ssl_certificate      %ssl_pem%;
     ssl_certificate_key  %ssl_key%;
 
@@ -14,7 +15,7 @@ server {
     include %home%/%user%/conf/web/%domain%/nginx.hsts.conf*;
 
     location / {
-        proxy_pass      http://192.168.1.25:443;
+        proxy_pass      http://192.168.1.1:443;
         proxy_http_version 1.1;
         proxy_buffering off;
         allow   192.168.0.0/16;

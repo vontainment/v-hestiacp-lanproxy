@@ -10,7 +10,7 @@ server {
     include %home%/%user%/conf/web/%domain%/nginx.forcessl.conf*;
 
         location /ws {
-                proxy_pass https://192.168.1.1:80;
+                proxy_pass http://192.168.1.1:80;
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "Upgrade";
@@ -19,7 +19,7 @@ server {
                 deny    all;
         }
         location / {
-	        proxy_pass https://192.168.1.1:80;
+	        proxy_pass http://192.168.1.1:80;
 	        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 	        proxy_set_header Host $http_host;
 	        proxy_set_header X-Forwarded-Proto $scheme;

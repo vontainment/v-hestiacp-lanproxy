@@ -9,7 +9,7 @@ server {
     include %home%/%user%/conf/web/%domain%/nginx.forcessl.conf*;
 
     location / {
-        proxy_pass      http://192.168.1.25:80;
+        proxy_pass      http://192.168.1.1:80;
         proxy_http_version 1.1;
         proxy_buffering off;
         allow   192.168.0.0/16;
