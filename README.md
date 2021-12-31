@@ -10,3 +10,6 @@ EdgeRouter: Works on ERX, should on others.
 --Secure Access: Local access + Password for public access. (Commiting to repo soon)
 TPLink:
 Pi-Hole:
+
+Please add any of your own. 
+If if you're not sure how to make your own you can use these for ideas and direction. Confgurations are easy and by looking at them he can help you figure out how to do your own for different services.
